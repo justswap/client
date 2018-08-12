@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { setJWT } from '../../store/actions';
 import { login } from '../../data/authentication';
 
@@ -7,7 +8,7 @@ const mapDispatchToProps = dispatch => ({
   setJWT: JWT => dispatch(setJWT(JWT))
 });
 
-class _Authentication extends Component {
+class Authentication extends Component {
   state = {
     login: 'admin@example.com',
     password: 'admin'
@@ -37,9 +38,11 @@ class _Authentication extends Component {
   }
 }
 
-const Authentication = connect(
+Authentication.propTypes = {
+  setJWT: PropTypes.func.isRequired
+};
+
+export default connect(
   null,
   mapDispatchToProps
-)(_Authentication);
-
-export default Authentication;
+)(Authentication);

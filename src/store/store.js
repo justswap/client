@@ -7,27 +7,21 @@ import storage from 'redux-persist/lib/storage';
 
 import rootReducer from './reducers';
 
-const history = createBrowserHistory();
-
 const persistConfig = {
   key: 'root',
   storage,
   whitelist: ['JWT'],
 };
 
+const history = createBrowserHistory();
+
 const historyReducer = connectRouter(history)(rootReducer);
 const persistedReducer = persistReducer(persistConfig, historyReducer);
 
-const middleware = [routerMiddleware(history)];
+const myRouterMiddleware = routerMiddleware(history);
+const middleware = [myRouterMiddleware];
 
-const store = createStore(
-  persistedReducer,
-  composeWithDevTools(applyMiddleware(...middleware))
-);
+const store = createStore(persistedReducer, composeWithDevTools(applyMiddleware(...middleware)));
 const persistor = persistStore(store);
 
-export {
-  history,
-  store,
-  persistor
-};
+export { history, store, persistor };

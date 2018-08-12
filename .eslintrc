@@ -3,6 +3,7 @@
     "browser": true,
     "jest": true
   },
+  "parser": "babel-eslint",
   "extends": "airbnb",
   "rules": {
     "indent": ["error", 2],

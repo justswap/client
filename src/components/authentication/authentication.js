@@ -18,6 +18,10 @@ class _Authentication extends Component {
     this.props.setJWT(token);
   };
 
+  logout = () => {
+    this.props.setJWT('');
+  };
+
   handleLoginChange = event => {
     this.setState({ login: event.target.value });
   };
@@ -32,6 +36,7 @@ class _Authentication extends Component {
         email: <input type="text" value={this.state.login} onChange={this.handleLoginChange} />
         password: <input type="password" onChange={this.handlePassChange} />
         <button onClick={this.login}>LOGIN</button>
+        <button onClick={this.logout}>LOGOUT</button>
       </div>
     );
   }

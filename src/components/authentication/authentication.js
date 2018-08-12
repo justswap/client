@@ -3,11 +3,9 @@ import { connect } from 'react-redux';
 import { setJWT } from '../../store/actions';
 import { login } from '../../data/authentication';
 
-const mapDispatchToProps = dispatch => {
-  return {
-    setJWT: JWT => dispatch(setJWT(JWT))
-  };
-};
+const mapDispatchToProps = dispatch => ({
+  setJWT: JWT => dispatch(setJWT(JWT))
+});
 
 class _Authentication extends Component {
   state = {

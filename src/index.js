@@ -5,9 +5,6 @@ import store from './store/store';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import config from 'react-global-configuration';
-
-config.set({ baseApiUrl: '127.0.0.1:8000' });
 
 ReactDOM.render(
   <Provider store={store}>

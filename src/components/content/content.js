@@ -1,14 +1,5 @@
-import React, { Component } from 'react';
-import Authentication from '../authentication/authentication';
+import React from 'react';
 
-class Content extends Component {
-  render() {
-    return (
-      <div className="content">
-        <Authentication />
-      </div>
-    );
-  }
-}
+const Content = () => <div className="content" />;
 
 export default Content;

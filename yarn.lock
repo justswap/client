@@ -6070,7 +6070,7 @@ node-pre-gyp@^0.9.0:
     semver "^5.3.0"
     tar "^4"
 
-node-sass-chokidar@^1.3.0:
+node-sass-chokidar@^1.3.3:
   version "1.3.3"
   resolved "https://registry.yarnpkg.com/node-sass-chokidar/-/node-sass-chokidar-1.3.3.tgz#0bc83b6f4a8264ae27cbc80b18c49ed445d07d68"
   dependencies:
@@ -6083,7 +6083,7 @@ node-sass-chokidar@^1.3.0:
     sass-graph "^2.1.1"
     stdout-stream "^1.4.0"
 
-node-sass@^4.9.2:
+node-sass@^4.9.2, node-sass@^4.9.3:
   version "4.9.3"
   resolved "https://registry.yarnpkg.com/node-sass/-/node-sass-4.9.3.tgz#f407cf3d66f78308bb1e346b24fa428703196224"
   dependencies:

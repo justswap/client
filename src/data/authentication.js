@@ -1,9 +1,9 @@
 import API from './api';
 
 export const login = async (email, password) => {
-  let response = await API.post('api-token-auth/', {
-    email: email,
-    password: password
+  const response = await API.post('api-token-auth/', {
+    email,
+    password,
   });
   return response.data.token;
 };

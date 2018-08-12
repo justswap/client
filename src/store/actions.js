@@ -1,4 +1,3 @@
-import { SET_JWT } from "./constants";
+import { SET_JWT } from './constants';
 
-
-export const setJWT = JWT => ({type: SET_JWT, payload: JWT});
+export const setJWT = JWT => ({ type: SET_JWT, payload: JWT });

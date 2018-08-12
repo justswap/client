@@ -7,15 +7,13 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import config from 'react-global-configuration';
 
-
-config.set({baseApiUrl: '127.0.0.1:8000'});
-
+config.set({ baseApiUrl: '127.0.0.1:8000' });
 
 ReactDOM.render(
-    <Providerp store={store}>
-        <App/>
-    </Providerp>,
-    document.getElementById('root')
+  <Providerp store={store}>
+    <App />
+  </Providerp>,
+  document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change

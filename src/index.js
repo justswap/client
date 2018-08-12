@@ -10,9 +10,9 @@ import config from 'react-global-configuration';
 config.set({ baseApiUrl: '127.0.0.1:8000' });
 
 ReactDOM.render(
-  <Providerp store={store}>
+  <Provider store={store}>
     <App />
-  </Providerp>,
+  </Provider>,
   document.getElementById('root')
 );
 

@@ -1,6 +1,10 @@
-import { createStore } from 'redux';
+import { applyMiddleware, createStore } from 'redux';
+import { connectRouter, routerMiddleware } from 'connected-react-router';
+import { composeWithDevTools } from 'redux-devtools-extension/logOnlyInProduction';
+import { createBrowserHistory } from 'history';
 import { persistStore, persistReducer } from 'redux-persist';
-import storage from 'redux-persist/lib/storage'; // defaults to localStorage for web and AsyncStorage for react-native
+import storage from 'redux-persist/lib/storage';
+
 import rootReducer from './reducers';
 
 const persistConfig = {
@@ -9,12 +13,15 @@ const persistConfig = {
   whitelist: ['JWT'],
 };
 
-const persistedReducer = persistReducer(persistConfig, rootReducer);
+const history = createBrowserHistory();
 
-const store = createStore(
-  persistedReducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-);
-export const persistor = persistStore(store);
+const historyReducer = connectRouter(history)(rootReducer);
+const persistedReducer = persistReducer(persistConfig, historyReducer);
 
-export default store;
+const myRouterMiddleware = routerMiddleware(history);
+const middleware = [myRouterMiddleware];
+
+const store = createStore(persistedReducer, composeWithDevTools(applyMiddleware(...middleware)));
+const persistor = persistStore(store);
+
+export { history, store, persistor };

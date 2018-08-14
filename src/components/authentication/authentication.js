@@ -4,9 +4,6 @@ import PropTypes from 'prop-types';
 import { setJWT } from '../../store/actions';
 import { login } from '../../data/authentication';
 
-const mapDispatchToProps = dispatch => ({
-  setJWT: JWT => dispatch(setJWT(JWT))
-});
 
 class Authentication extends Component {
   state = {
@@ -41,6 +38,10 @@ class Authentication extends Component {
 Authentication.propTypes = {
   setJWT: PropTypes.func.isRequired
 };
+
+const mapDispatchToProps = dispatch => ({
+  setJWT: JWT => dispatch(setJWT(JWT))
+});
 
 export default connect(
   null,

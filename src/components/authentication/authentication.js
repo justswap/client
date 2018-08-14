@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { setJWT } from '../../store/actions';
-import { login } from '../../data/authentication';
-
+import { login, logout } from '../../store/actions';
 
 class Authentication extends Component {
   state = {
@@ -11,13 +9,12 @@ class Authentication extends Component {
     password: 'admin'
   };
 
-  login = async () => {
-    const token = await login(this.state.login, this.state.password);
-    this.props.setJWT(token);
+  login = () => {
+    this.props.login(this.state.login, this.state.password);
   };
 
   logout = () => {
-    this.props.setJWT('');
+    this.props.logout();
   };
 
   handleLoginChange = event => {
@@ -41,11 +38,13 @@ class Authentication extends Component {
 }
 
 Authentication.propTypes = {
-  setJWT: PropTypes.func.isRequired
+  login: PropTypes.func.isRequired,
+  logout: PropTypes.func.isRequired
 };
 
 const mapDispatchToProps = dispatch => ({
-  setJWT: JWT => dispatch(setJWT(JWT))
+  login: (email, password) => dispatch(login(email, password)),
+  logout: () => dispatch(logout())
 });
 
 export default connect(

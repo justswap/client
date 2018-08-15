@@ -16,7 +16,6 @@ import * as serviceWorker from './serviceWorker';
 import messages from './messages';
 import { flattenMessages } from './utils/i18n';
 
-
 addLocaleData([...en, ...pl]);
 
 const locale = (navigator.languages && navigator.languages[0]) || navigator.language || 'en-US';

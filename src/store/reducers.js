@@ -2,7 +2,7 @@ import { SET_JWT, LOGIN_IN_PROGRESS } from './constants';
 
 const initialState = {
   JWT: '',
-  loginInProgress: false,
+  loginInProgress: false
 };
 
 const rootReducer = (state = initialState, action) => {

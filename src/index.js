@@ -15,13 +15,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import messages from './messages';
 import { flattenMessages } from './utils/i18n';
-//
-// if (!window.Intl) {
-//   const requiredPolyfills = ['intl', 'intl/locale-data/jsonp/en.js', 'intl/locale-data/jsonp/pl.js'];
-//   require.ensure(requiredPolyfills, require => {
-//     requiredPolyfills.forEach(require);
-//   });
-// }
+
 
 addLocaleData([...en, ...pl]);
 

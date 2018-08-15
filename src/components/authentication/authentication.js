@@ -5,12 +5,13 @@ import { login, logout } from '../../store/authentication/actions';
 
 class Authentication extends Component {
   state = {
-    login: 'admin@example.com',
+    email: 'admin@example.com',
     password: 'admin'
   };
 
   login = () => {
-    this.props.login(this.state.login, this.state.password);
+    const { email, password } = this.state;
+    this.props.login(email, password);
   };
 
   logout = () => {
@@ -18,7 +19,7 @@ class Authentication extends Component {
   };
 
   handleLoginChange = event => {
-    this.setState({ login: event.target.value });
+    this.setState({ email: event.target.value });
   };
 
   handlePassChange = event => {
@@ -28,7 +29,7 @@ class Authentication extends Component {
   render() {
     return (
       <div className="authentication">
-        email: <input type="text" value={this.state.login} onChange={this.handleLoginChange} />
+        email: <input type="text" value={this.state.email} onChange={this.handleLoginChange} />
         password: <input type="password" onChange={this.handlePassChange} />
         <button onClick={this.login}>LOGIN</button>
         <button onClick={this.logout}>LOGOUT</button>

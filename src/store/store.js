@@ -8,13 +8,12 @@ import createSagaMiddleware from 'redux-saga';
 import storage from 'redux-persist/lib/storage';
 
 import rootReducer from './reducers';
-import authenticationSagas from '../sagas/authentication'
-
+import rootSaga from '../sagas/index';
 
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['JWT']
+  whitelist: []
 };
 
 const history = createBrowserHistory();
@@ -29,6 +28,6 @@ const middleware = [myRouterMiddleware, sagaMiddleware];
 const store = createStore(persistedReducer, composeWithDevTools(applyMiddleware(...middleware)));
 const persistor = persistStore(store);
 
-sagaMiddleware.run(authenticationSagas);
+sagaMiddleware.run(rootSaga);
 
 export { history, store, persistor };

@@ -1,7 +1,6 @@
 export const SET_JWT = 'SET_JWT';
 export const LOGIN = 'LOGIN';
 export const LOGOUT = 'LOGOUT';
-export const LOGIN_IN_PROGRESS = 'LOGIN_IN_PROGRESS';
 export const LOGIN_ERROR = 'LOGIN_ERROR';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const REFRESH_TOKEN = 'REFRESH_TOKEN';

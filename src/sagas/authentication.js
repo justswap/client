@@ -1,24 +1,22 @@
 import { call, fork, put, select, takeLatest } from 'redux-saga/effects';
 import { login, refreshToken } from '../data/authentication';
-import { getToken } from '../store/selectors';
+import { getToken } from '../store/authentication/selectors';
 import {
   loginError,
-  loginInProgress,
   loginSuccess,
   logout,
   networkError,
   setJWT,
   tokenExpired,
   tokenRefreshUnknownError
-} from '../store/actions';
-import { LOGIN, LOGOUT, REFRESH_TOKEN, TOKEN_EXPIRED } from '../store/constants';
+} from '../store/authentication/actions';
+import { LOGIN, LOGOUT, REFRESH_TOKEN, TOKEN_EXPIRED } from '../store/authentication/constants';
 
 function* loginSaga(action) {
   const MAX_RETRIES = 3;
   let retiresCounter = 0;
   while (retiresCounter < MAX_RETRIES) {
     try {
-      yield put(loginInProgress(true));
       const JWT = yield call(login, action.payload.email, action.payload.password);
       yield put(setJWT(JWT));
       yield put(loginSuccess());
@@ -30,7 +28,6 @@ function* loginSaga(action) {
   if (retiresCounter === MAX_RETRIES) {
     yield put(loginError());
   }
-  yield put(loginInProgress(false));
 }
 
 function* logoutSaga() {

@@ -7,7 +7,7 @@ import Content from './components/content/content';
 import Authentication from './components/authentication/authentication';
 
 import './App.css';
-import { refreshToken } from './store/actions';
+import { refreshToken } from './store/authentication/actions';
 
 class App extends Component {
   componentDidMount() {

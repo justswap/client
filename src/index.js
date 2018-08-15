@@ -20,7 +20,7 @@ import { flattenMessages } from './utils/i18n';
 addLocaleData([...en, ...pl]);
 
 const locale = (navigator.languages && navigator.languages[0]) || navigator.language || 'en-US';
-const localeMessages = messages[locale] ? messages[locale] : messages['en-US'];
+const localeMessages = messages[locale] || messages['en-US'];
 
 ReactDOM.render(
   <Provider store={store}>

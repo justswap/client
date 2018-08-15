@@ -34,7 +34,7 @@ class Authentication extends Component {
         email: <input type="text" value={this.state.email} onChange={this.handleLoginChange} />
         password: <input type="password" onChange={this.handlePassChange} />
         <button onClick={this.login}>
-          <FormattedMessage id="authentication.login" values={{ name: 'ziemniak' }} /> : {this.props.intl.locale}
+          <FormattedMessage id="authentication.login" /> : {this.props.intl.locale}
         </button>
         <button onClick={this.logout}>LOGOUT</button>
       </div>

@@ -1,7 +1,7 @@
 const messages = {
   en: {
     authentication: {
-      login: 'Login {name}'
+      login: 'Login'
     }
   },
   pl: {

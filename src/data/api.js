@@ -7,15 +7,14 @@ const api = axios.create({
 
 api.interceptors.request.use(
   config => {
-    const JWT = store.getState().JWT;
+    const { JWT } = store.getState();
     if (JWT) {
+      // eslint-disable-next-line no-param-reassign
       config.headers.Authorization = `Authorization: JWT ${JWT}`;
     }
     return config;
   },
-  error => {
-    return Promise.reject(error);
-  }
+  error => Promise.reject(error)
 );
 
 export default api;

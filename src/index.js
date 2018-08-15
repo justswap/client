@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react';
-import { ConnectedRouter } from 'connected-react-router'
+import { ConnectedRouter } from 'connected-react-router';
 
 import { history, store, persistor } from './store/store';
 import './index.css';

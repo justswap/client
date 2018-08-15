@@ -1,16 +1,8 @@
-import { SET_JWT } from './constants';
+import { combineReducers } from 'redux';
+import authenticationReducer from './authentication/reducers';
 
-const initialState = {
-  JWT: ''
-};
-
-const rootReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case SET_JWT:
-      return { ...state, JWT: action.payload };
-    default:
-      return state;
-  }
-};
+const rootReducer = combineReducers({
+  authentication: authenticationReducer
+});
 
 export default rootReducer;

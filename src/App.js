@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-import { Route, Redirect, Switch } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import Content from './components/Content/Content';
-import Authentication from './components/Authentication/Authentication';
+import Content from 'components/Content/Content';
+import Login from 'components/Login/Login';
+import Registration from 'components/Registration/Registration';
+
+import { refreshToken } from 'store/authentication/actions';
 
 import './App.css';
-import { refreshToken } from './store/authentication/actions';
 
 class App extends Component {
   componentDidMount() {
@@ -19,7 +21,8 @@ class App extends Component {
       <div className="main-container">
         <Switch>
           <Route exact path="/" component={Content} />
-          <Route exact path="/login" component={Authentication} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/register" component={Registration} />
           <Redirect to="/" />
         </Switch>
       </div>

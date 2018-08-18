@@ -1,20 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react';
 import { ConnectedRouter } from 'connected-react-router';
 import { addLocaleData, IntlProvider } from 'react-intl';
-
 import en from 'react-intl/locale-data/en';
 import pl from 'react-intl/locale-data/pl';
 
-import { history, store, persistor } from './store/store';
+import { history, persistor, store } from 'store/store';
+import { flattenMessages } from 'utils/i18n';
+
+import 'normalize.css/normalize.css';
 import './index.css';
+
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import messages from './messages';
-import { flattenMessages } from './utils/i18n';
 
 addLocaleData([...en, ...pl]);
 

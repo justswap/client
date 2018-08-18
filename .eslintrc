@@ -18,5 +18,16 @@
         "specialLink": ["to"]
       }
     ]
+  },
+  "settings": {
+    "import/resolver": {
+      "alias": [
+        ["components", "./src/components"],
+        ["data", "./src/data"],
+        ["sagas", "./src/sagas"],
+        ["store", "./src/store"],
+        ["utils", "./src/utils"]
+      ]
+    }
   }
 }

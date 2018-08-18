@@ -1,8 +1,8 @@
 import { fork, takeLatest, call, put } from 'redux-saga/effects';
 
-import { REGISTER } from '../store/registration/constants';
-import { register } from '../data/registration';
-import { registerNetworkError, registerSuccess } from '../store/registration/actions';
+import { REGISTER } from 'store/registration/constants';
+import { register } from 'data/registration';
+import { registerNetworkError, registerSuccess } from 'store/registration/actions';
 
 function* registerSaga(action) {
   const { email, username, password } = action.payload;

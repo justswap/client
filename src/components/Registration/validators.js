@@ -1,5 +1,5 @@
-import { validate } from '../../data/registration';
-import { emailRegex } from '../../utils/constants';
+import { validate } from 'data/registration';
+import { emailRegex } from 'utils/constants';
 
 const validateFieldOnServer = async (value, field) => {
   let data;

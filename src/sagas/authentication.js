@@ -1,6 +1,6 @@
 import { call, fork, put, select, takeLatest } from 'redux-saga/effects';
-import { login, refreshToken } from '../data/authentication';
-import { getToken } from '../store/authentication/selectors';
+import { login, refreshToken } from 'data/authentication';
+import { getToken } from 'store/authentication/selectors';
 import {
   loginError,
   loginSuccess,
@@ -9,8 +9,8 @@ import {
   setJWT,
   tokenExpired,
   tokenRefreshUnknownError
-} from '../store/authentication/actions';
-import { LOGIN, LOGOUT, REFRESH_TOKEN, TOKEN_EXPIRED } from '../store/authentication/constants';
+} from 'store/authentication/actions';
+import { LOGIN, LOGOUT, REFRESH_TOKEN, TOKEN_EXPIRED } from 'store/authentication/constants';
 
 function* loginSaga(action) {
   const MAX_RETRIES = 3;

@@ -5,7 +5,7 @@ import { SET_JWT, LOGIN, LOGIN_ERROR, LOGIN_SUCCESS } from './constants';
 
 const initialState = {
   JWT: '',
-  loginInProgress: false
+  loading: false
 };
 
 const authenticationReducer = (state = initialState, action) => {
@@ -13,11 +13,11 @@ const authenticationReducer = (state = initialState, action) => {
     case SET_JWT:
       return { ...state, JWT: action.payload };
     case LOGIN:
-      return { ...state, loginInProgress: true };
+      return { ...state, loading: true };
     case LOGIN_ERROR:
-      return { ...state, loginInProgress: false };
+      return { ...state, loading: false };
     case LOGIN_SUCCESS:
-      return { ...state, loginInProgress: false };
+      return { ...state, loading: false };
     default:
       return state;
   }

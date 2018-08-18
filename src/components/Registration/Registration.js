@@ -4,7 +4,7 @@ import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import PropTypes from 'prop-types';
 import { Form, Text } from 'informed';
 
-import { register } from '../../store/registration/actions';
+import { register } from 'store/registration/actions';
 import * as Validators from './validators';
 
 import './Registration.css';
@@ -21,7 +21,7 @@ class Registration extends Component {
       <div id="registration">
         <Form id="registrationForm" onSubmit={formState => this.handleSubmit(formState)}>
           {({ formState }) => (
-            <div>
+            <>
               <div>
                 <label htmlFor="registrationEmail">
                   <FormattedMessage id="registration.email" />
@@ -81,7 +81,7 @@ class Registration extends Component {
                 />
               </div>
               <button type="submit">Submit</button>
-            </div>
+            </>
           )}
         </Form>
       </div>

@@ -7,7 +7,7 @@ import { Form, Text } from 'informed';
 import { register } from '../../store/registration/actions';
 import * as Validators from './validators';
 
-import './registration.css';
+import './Registration.css';
 
 class Registration extends Component {
   handleSubmit = formState => {

@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import Content from './components/content/content';
-import Login from './components/login/login';
-import Registration from './components/registration/registration';
+import Login from './components/Login/Login';
+import Registration from './components/Registration/Registration';
 
 import './App.css';
 import { refreshToken } from './store/authentication/actions';

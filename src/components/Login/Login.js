@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 
-import './login.css';
+import './Login.css';
 
 import { login, logout } from '../../store/authentication/actions';
 

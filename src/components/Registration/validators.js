@@ -21,9 +21,9 @@ export const validateUsername = username => {
   return this.props.intl.formatMessage({ id: 'registration.usernameError' });
 };
 
-export const validateUsernameOnServer = async username => this.validateFieldOnServer(username, 'username');
+export const validateUsernameOnServer = async username => validateFieldOnServer(username, 'username');
 
-export const validateEmailOnServer = async email => this.validateFieldOnServer(email, 'email');
+export const validateEmailOnServer = async email => validateFieldOnServer(email, 'email');
 
 export const validateEmail = email => {
   if (!email) {

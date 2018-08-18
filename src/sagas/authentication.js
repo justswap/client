@@ -41,10 +41,10 @@ function* refreshSaga() {
       const newJWT = yield call(refreshToken, 'asdfsadf');
       yield put(setJWT(newJWT));
     } catch (error) {
-      const { data } = error.response;
       if (typeof error.response === 'undefined') {
         yield put(networkError());
       } else if (error.response.status === 400) {
+        const { data } = error.response;
         if (data.non_fields_errors && data.non_fields_errors.find('Refresh has expired.')) {
           yield put(tokenExpired());
         } else {

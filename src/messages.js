@@ -2,6 +2,21 @@ const messages = {
   en: {
     authentication: {
       login: 'Login'
+    },
+    registration: {
+      email: 'email',
+      emailPlaceholder: 'your@email.com',
+      password: 'Password',
+      passwordConfirmation: 'Confirm password',
+      passwordPlaceholder: 'password',
+      passwordsDoNotMatch: 'Passwords are different',
+      passwordToShort: 'Password has to be at least {minLength} symbols long.',
+      usernamePlaceholder: 'username',
+      username: 'username',
+      invalidEmail: 'Email address is invalid',
+      cantBeEmpty: 'This field is required',
+      isTaken: 'This {field} is already in use.',
+      usernameError: 'Username must have between 3 and 15 letters'
     }
   },
   pl: {

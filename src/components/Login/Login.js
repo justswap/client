@@ -3,9 +3,11 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 
+import './Login.css';
+
 import { login, logout } from '../../store/authentication/actions';
 
-class Authentication extends Component {
+class Login extends Component {
   state = {
     email: 'admin@example.com',
     password: 'admin'
@@ -30,7 +32,7 @@ class Authentication extends Component {
 
   render() {
     return (
-      <div className="authentication">
+      <div id="login">
         email: <input type="text" value={this.state.email} onChange={this.handleLoginChange} />
         password: <input type="password" onChange={this.handlePassChange} />
         <button onClick={this.login}>
@@ -42,7 +44,7 @@ class Authentication extends Component {
   }
 }
 
-Authentication.propTypes = {
+Login.propTypes = {
   login: PropTypes.func.isRequired,
   logout: PropTypes.func.isRequired,
   intl: intlShape.isRequired
@@ -56,4 +58,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   null,
   mapDispatchToProps
-)(injectIntl(Authentication));
+)(injectIntl(Login));

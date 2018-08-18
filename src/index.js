@@ -5,6 +5,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react';
 import { ConnectedRouter } from 'connected-react-router';
 import { addLocaleData, IntlProvider } from 'react-intl';
+import 'normalize.css/normalize.css';
 
 import en from 'react-intl/locale-data/en';
 import pl from 'react-intl/locale-data/pl';

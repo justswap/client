@@ -3,8 +3,8 @@ import { Route, Redirect, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import Content from './components/content/content';
-import Authentication from './components/authentication/authentication';
+import Content from './components/Content/Content';
+import Authentication from './components/Authentication/Authentication';
 
 import './App.css';
 import { refreshToken } from './store/authentication/actions';

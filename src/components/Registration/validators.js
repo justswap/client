@@ -16,10 +16,13 @@ const validateFieldOnServer = async (value, field) => {
 };
 
 export const validateUsername = username => {
-  if (username && username.length > 3 && username.length < 15) {
+  const minLength = 3;
+  const maxLength = 15;
+
+  if (username && username.length >= minLength && username.length <= maxLength) {
     return null;
   }
-  return intl.formatMessage({ id: 'registration.usernameError' });
+  return intl.formatMessage({ id: 'registration.usernameError' }, { minLength, maxLength });
 };
 
 export const validateUsernameOnServer = async username => validateFieldOnServer(username, 'username');

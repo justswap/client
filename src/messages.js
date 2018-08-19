@@ -19,7 +19,7 @@ const messages = {
       invalidEmail: 'Email address is invalid',
       cantBeEmpty: 'This field is required',
       isTaken: 'This {field} is already in use.',
-      usernameError: 'Username must have between 3 and 15 letters'
+      usernameError: 'Username must have between {minLength} and {maxLength} characters'
     }
   },
   pl: {

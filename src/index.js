@@ -15,9 +15,9 @@ import { history, persistor, store } from 'store/store';
 import IntlGlobalProvider from 'components/IntlGlobalProvider';
 import flattenLocaleMessages from './messages';
 
+import 'semantic-ui-css/semantic.min.css'; // eslint-disable-line import/first
+import 'normalize.css/normalize.css'; // eslint-disable-line import/first
 import './index.css';
-// eslint-disable-next-line import/first
-import 'normalize.css/normalize.css';
 
 import App from './App';
 import * as serviceWorker from './serviceWorker';

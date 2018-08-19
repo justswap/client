@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import PropTypes from 'prop-types';
@@ -21,7 +21,7 @@ class Registration extends Component {
       <div id="registration">
         <Form id="registrationForm" onSubmit={formState => this.handleSubmit(formState)}>
           {({ formState }) => (
-            <>
+            <Fragment>
               <div>
                 <label htmlFor="registrationEmail">
                   <FormattedMessage id="registration.email" />
@@ -81,7 +81,7 @@ class Registration extends Component {
                 />
               </div>
               <button type="submit">Submit</button>
-            </>
+            </Fragment>
           )}
         </Form>
       </div>

@@ -1,10 +1,10 @@
 import React from 'react';
-
-import AppBar from './AppBar/AppBar';
+import { Button } from 'semantic-ui-react';
 
 const Home = () => (
   <div>
-    <AppBar />
+    <Button primary>Primary</Button>
+    <Button secondary>Secondary</Button>
   </div>
 );
 

@@ -3,6 +3,7 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
+import Layout from 'views/Layout/Layout';
 import Home from 'views/Home/Home';
 import Login from 'views/Login/Login';
 import Registration from 'views/Registration/Registration';
@@ -18,14 +19,14 @@ class App extends Component {
 
   render() {
     return (
-      <div className="main-container">
+      <Layout>
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Registration} />
           <Redirect to="/" />
         </Switch>
-      </div>
+      </Layout>
     );
   }
 }

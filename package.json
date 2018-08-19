@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^1.5.0",
+    "@material-ui/icons": "^2.0.2",
     "axios": "^0.18.0",
     "connected-react-router": "^4.4.0",
-    "foundation-sites": "^6.5.0-rc.2",
     "history": "^4.7.2",
     "informed": "^1.10.4",
     "intl": "^1.2.5",

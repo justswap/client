@@ -26,7 +26,8 @@
         ["data", "./src/data"],
         ["sagas", "./src/sagas"],
         ["store", "./src/store"],
-        ["utils", "./src/utils"]
+        ["utils", "./src/utils"],
+        ["views", "./src/views"]
       ]
     }
   }

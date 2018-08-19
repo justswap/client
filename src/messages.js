@@ -1,3 +1,6 @@
+import { locale } from 'utils/constants';
+import { flattenMessages } from 'utils/i18n';
+
 const messages = {
   en: {
     authentication: {
@@ -30,4 +33,5 @@ messages['pl-PL'] = messages.pl;
 messages['en-US'] = messages.en;
 messages['en-GB'] = messages.en;
 
-export default messages;
+export default flattenMessages(messages[locale] || messages['en-US']);
+export { messages };

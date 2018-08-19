@@ -3,9 +3,9 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import Content from 'components/Content/Content';
-import Login from 'components/Login/Login';
-import Registration from 'components/Registration/Registration';
+import Home from 'views/Home/Home';
+import Login from 'views/Login/Login';
+import Registration from 'views/Registration/Registration';
 
 import { refreshToken } from 'store/authentication/actions';
 
@@ -20,7 +20,7 @@ class App extends Component {
     return (
       <div className="main-container">
         <Switch>
-          <Route exact path="/" component={Content} />
+          <Route exact path="/" component={Home} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Registration} />
           <Redirect to="/" />

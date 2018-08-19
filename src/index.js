@@ -8,31 +8,32 @@ import { addLocaleData, IntlProvider } from 'react-intl';
 import en from 'react-intl/locale-data/en';
 import pl from 'react-intl/locale-data/pl';
 
+import { locale } from 'utils/constants';
 import { history, persistor, store } from 'store/store';
-import { flattenMessages } from 'utils/i18n';
+import IntlGlobalProvider from 'components/IntlGlobalProvider';
+import flattenLocaleMessages from './messages';
 
-import 'normalize.css/normalize.css';
 import './index.css';
+// eslint-disable-next-line import/first
+import 'normalize.css/normalize.css';
 
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import messages from './messages';
 
 addLocaleData([...en, ...pl]);
-
-const locale = (navigator.languages && navigator.languages[0]) || navigator.language || 'en-US';
-const localeMessages = messages[locale] || messages['en-US'];
 
 ReactDOM.render(
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
-      <IntlProvider locale={locale} messages={flattenMessages(localeMessages)}>
-        <ConnectedRouter history={history}>
-          <Switch>
-            <Route path="/" component={App} />
-            <Redirect to="/" />
-          </Switch>
-        </ConnectedRouter>
+      <IntlProvider locale={locale} messages={flattenLocaleMessages}>
+        <IntlGlobalProvider>
+          <ConnectedRouter history={history}>
+            <Switch>
+              <Route path="/" component={App} />
+              <Redirect to="/" />
+            </Switch>
+          </ConnectedRouter>
+        </IntlGlobalProvider>
       </IntlProvider>
     </PersistGate>
   </Provider>,

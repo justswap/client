@@ -34,7 +34,7 @@ class Registration extends Component {
                   asyncValidate={Validators.validateEmailOnServer}
                   asyncValidateOnBlur
                   validateOnBlur
-                  className={formState.errors.email || formState.asyncErrors.email ? 'form-error' : ''}
+                  className={formState.errors.email || formState.asyncErrors.email ? 'registration-form-error' : ''}
                 />
               </div>
               <div>
@@ -49,7 +49,7 @@ class Registration extends Component {
                   asyncValidate={Validators.validateUsernameOnServer}
                   asyncValidateOnBlur
                   validateOnBlur
-                  className={formState.errors.username || formState.asyncErrors.username ? 'form-error' : ''}
+                  className={formState.errors.username || formState.asyncErrors.username ? 'registration-form-error' : ''}
                 />
               </div>
               <div>
@@ -63,7 +63,7 @@ class Registration extends Component {
                   placeholder={intl.formatMessage({ id: 'registration.passwordPlaceholder' })}
                   validate={Validators.validatePassword}
                   validateOnBlur
-                  className={formState.errors.password ? 'form-error' : ''}
+                  className={formState.errors.password ? 'registration-form-error' : ''}
                 />
               </div>
               <div>
@@ -77,7 +77,7 @@ class Registration extends Component {
                   placeholder={intl.formatMessage({ id: 'registration.passwordPlaceholder' })}
                   validate={Validators.validatePasswordConfirmation}
                   validateOnBlur
-                  className={formState.errors.passwordConfirmation ? 'form-error' : ''}
+                  className={formState.errors.passwordConfirmation ? 'registration-form-error' : ''}
                 />
               </div>
               <button type="submit">Submit</button>

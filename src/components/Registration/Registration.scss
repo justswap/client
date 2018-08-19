@@ -1,7 +1,5 @@
 #registration {
-  color: var(--main-text-color);
-
-  .form-error {
-    background-color: var(--error-color);
+  .registration-form-error {
+    background-color: red;
   }
 }
